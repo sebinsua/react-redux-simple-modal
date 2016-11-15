@@ -11,6 +11,7 @@ export default {
       'runtimeHelpers': true,
       'plugins': [ 'transform-runtime', 'external-helpers' ],
       'presets': [
+        [ 'react' ],
         [ 'es2015', { 'modules': false } ],
         [ 'stage-2' ]
       ],
