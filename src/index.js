@@ -1,6 +1,12 @@
 import * as actionTypes from './actionTypes'
-import * as actions from './actions'
+import { openModal, closeModal } from './actions'
 import reducer from './reducer'
 import ModalContainer from './ModalContainer'
 
-export { actionTypes, actions, reducer, ModalContainer }
+export {
+  actionTypes,
+  openModal,
+  closeModal,
+  reducer,
+  ModalContainer
+}
