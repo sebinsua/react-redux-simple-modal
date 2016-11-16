@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 
-import { closeModal } from './actions'
+import { destroy, closeModal } from './actions'
 import { REDUCER_NAME } from './reducer'
 
 export class ModalSwitcher extends Component {
@@ -11,12 +11,13 @@ export class ModalSwitcher extends Component {
     modals: PropTypes.object.isRequired,
     modalType: PropTypes.string,
     modalParams: PropTypes.object,
-    closeModal: PropTypes.func.isRequired
+    closeModal: PropTypes.func.isRequired,
+    destroy: PropTypes.func.isRequired
   }
 
   componentWillUnmount () {
-    const { closeModal } = this.props
-    closeModal()
+    const { destroy } = this.props
+    destroy()
   }
 
   render () {
@@ -62,7 +63,7 @@ export function mapStateToProps (state, { reducerKey = REDUCER_NAME } = {}) {
 }
 
 export function mapDispatchToProps (dispatch) {
-  return bindActionCreators({ closeModal }, dispatch)
+  return bindActionCreators({ closeModal, destroy }, dispatch)
 }
 
 export default connect(

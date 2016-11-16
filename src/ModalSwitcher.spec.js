@@ -18,7 +18,8 @@ const props = {
   },
   modalType: null,
   modalParams: null,
-  closeModal: () => undefined
+  closeModal: () => undefined,
+  destroy: () => undefined
 }
 
 test('mapStateToProps() generates valid props', () => {

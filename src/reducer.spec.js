@@ -1,4 +1,4 @@
-import { OPEN_MODAL, CLOSE_MODAL } from './actionTypes'
+import { OPEN_MODAL, CLOSE_MODAL, DESTROY } from './actionTypes'
 import reducer, { initialState } from './reducer'
 
 test('reducer sets up initialState', () => {
@@ -13,5 +13,10 @@ test('reducer handles OPEN_MODAL', () => {
 
 test('reducer handles CLOSE_MODAL', () => {
   expect(reducer({ modalType: 'ADD_GRID_MODAL', modalParams: { gridId: 1 } }, { type: CLOSE_MODAL }))
+    .toEqual({ modalType: null, modalParams: {} })
+})
+
+test('reducer handles DESTROY', () => {
+  expect(reducer({ modalType: 'ADD_GRID_MODAL', modalParams: { gridId: 1 } }, { type: DESTROY }))
     .toEqual({ modalType: null, modalParams: {} })
 })

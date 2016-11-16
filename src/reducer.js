@@ -1,4 +1,4 @@
-import { OPEN_MODAL, CLOSE_MODAL } from './actionTypes'
+import { OPEN_MODAL, CLOSE_MODAL, DESTROY } from './actionTypes'
 
 export const REDUCER_NAME = 'modals'
 
@@ -18,6 +18,7 @@ export default function modals (state = initialState, action) {
         modalParams: action.payload.modalParams || {}
       }
 
+    case DESTROY:
     case CLOSE_MODAL:
       return {
         ...state,
