@@ -10,12 +10,12 @@
     "test": "src/*"
   },
   "scripts": {
-    "prepublish": "npm run build",
     "test": "npm run test:lint && npm run test:unit",
     "test:lint": "standard $npm_package_directories_src | snazzy",
     "test:unit": "jest $npm_package_directories_test",
     "build": "rollup -c",
-    "release": "npm run build && standard-version"
+    "push": "git push --follow-tags origin master",
+    "release": "npm test && npm run build && standard-version && npm run push && npm publish"
   },
   "repository": {
     "type": "git",
