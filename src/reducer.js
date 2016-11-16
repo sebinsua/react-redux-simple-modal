@@ -1,5 +1,7 @@
 import { OPEN_MODAL, CLOSE_MODAL } from './actionTypes'
 
+export const REDUCER_NAME = 'modals'
+
 // Initial State
 export const initialState = {
   modalType: null,

@@ -1,12 +1,12 @@
 import * as actionTypes from './actionTypes'
 import { openModal, closeModal } from './actions'
 import reducer from './reducer'
-import ModalContainer from './ModalContainer'
+import ModalSwitcher from './ModalSwitcher'
 
 export {
   actionTypes,
   openModal,
   closeModal,
   reducer,
-  ModalContainer
+  ModalSwitcher
 }

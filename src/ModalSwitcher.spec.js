@@ -1,7 +1,7 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 
-import { mapStateToProps, ModalContainer } from './ModalContainer'
+import { mapStateToProps, ModalSwitcher } from './ModalSwitcher'
 
 function TestModal1 () {
   return <span>Test Modal 1</span>
@@ -17,7 +17,8 @@ const props = {
     'TEST_MODAL_2': TestModal2
   },
   modalType: null,
-  modalParams: null
+  modalParams: null,
+  closeModal: () => undefined
 }
 
 test('mapStateToProps() generates valid props', () => {
@@ -36,8 +37,8 @@ test('mapStateToProps() generates valid props', () => {
     })
 })
 
-test('ModalContainer does not show a modal by default', () => {
-  const component = shallow(<ModalContainer {...props} />)
+test('ModalSwitcher does not show a modal by default', () => {
+  const component = shallow(<ModalSwitcher {...props} />)
 
   expect(component.find(TestModal1).length)
     .toBe(0)
@@ -46,22 +47,22 @@ test('ModalContainer does not show a modal by default', () => {
     .toBe(0)
 })
 
-test('ModalContainer can show TestModal1', () => {
-  const component = shallow(<ModalContainer {...props} modalType='TEST_MODAL_1' />)
+test('ModalSwitcher can show TestModal1', () => {
+  const component = shallow(<ModalSwitcher {...props} modalType='TEST_MODAL_1' />)
 
   expect(component.find(TestModal1).length)
     .toBe(1)
 })
 
-test('ModalContainer can show TestModal2', () => {
-  const component = shallow(<ModalContainer {...props} modalType='TEST_MODAL_2' />)
+test('ModalSwitcher can show TestModal2', () => {
+  const component = shallow(<ModalSwitcher {...props} modalType='TEST_MODAL_2' />)
 
   expect(component.find(TestModal2).length)
     .toBe(1)
 })
 
-test('ModalContainer can send modalParams into Modal', () => {
-  const component = shallow(<ModalContainer {...props} modalType='TEST_MODAL_1' modalParams={{ id: 3 }} />)
+test('ModalSwitcher can send modalParams into Modal', () => {
+  const component = shallow(<ModalSwitcher {...props} modalType='TEST_MODAL_1' modalParams={{ id: 3 }} />)
 
   expect(component.find(TestModal1).length)
     .toBe(1)
