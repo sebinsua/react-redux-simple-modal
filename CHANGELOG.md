@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.2.0"></a>
+# [0.2.0](https://github.com/sebinsua/react-redux-simple-modal/compare/v0.1.0...v0.2.0) (2016-11-16)
+
+
+### Bug Fixes
+
+* **reducer:** throw error if reducer is not setup ([d25400a](https://github.com/sebinsua/react-redux-simple-modal/commit/d25400a))
+* **release:** cleaner release process ([0712f14](https://github.com/sebinsua/react-redux-simple-modal/commit/0712f14))
+
+
+### Features
+
+* **destroy:** leaving a modal without closing it should destroy ([44e085f](https://github.com/sebinsua/react-redux-simple-modal/commit/44e085f))
+
+
+
 <a name="0.1.0"></a>
 # [0.1.0](https://github.com/sebinsua/react-redux-simple-modal/compare/v0.0.0...v0.1.0) (2016-11-16)
 
