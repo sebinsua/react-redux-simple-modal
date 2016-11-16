@@ -46,6 +46,9 @@ export class ModalSwitcher extends Component {
 }
 
 export function mapStateToProps (state, { reducerKey = REDUCER_NAME } = {}) {
+  if (!(reducerKey in state)) {
+    throw new Error(`${reducerKey} was not found in state but is required by ModalSwitcher. Please check your root reducer to ensure it has been setup correctly.`)
+  }
   const {
     [reducerKey]: {
       modalType,
