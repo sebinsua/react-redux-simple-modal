@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.1.0"></a>
+# [0.1.0](https://github.com/sebinsua/react-redux-simple-modal/compare/v0.0.0...v0.1.0) (2016-11-16)
+
+
+### Features
+
+* **switcher:** renamed container to switcher ([7324efd](https://github.com/sebinsua/react-redux-simple-modal/commit/7324efd))
+
+
+
 <a name="0.0.0"></a>
 # 0.0.0 (2016-11-15)
 
