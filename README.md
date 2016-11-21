@@ -1,4 +1,4 @@
-# `react-redux-simple-modal`
+# `react-redux-simple-modal` [![Build Status](https://travis-ci.org/sebinsua/react-redux-simple-modal.png)](https://travis-ci.org/sebinsua/react-redux-simple-modal) [![npm version](https://badge.fury.io/js/react-redux-simple-modal.svg)](https://npmjs.org/package/react-redux-simple-modal)
 > A simple modal switcher for React.
 
 A super simple set of actions, a reducer and a component to display modals.
