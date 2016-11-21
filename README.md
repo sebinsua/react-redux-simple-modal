@@ -1,5 +1,7 @@
 # `react-redux-simple-modal`
-> A simple modal for React.
+> A simple modal switcher for React.
+
+A super simple set of actions, a reducer and a component to display modals.
 
 ## Install
 
@@ -67,7 +69,7 @@ It has no arguments.
 
 #### `<ModalSwicher modals={{[key: string]: SimpleModalComponent}} />`
 
-This renders a `SimpleModalComponent` iff `modalType` has been set within the modals store.
+This renders a `SimpleModalComponent` iff a `modalType` that matches a key within `modals` has been set within the modals store.
 
 ###### `<SimpleModalComponent modalType={string} closeModal={(...rest: Array<void>) => void} modalParams={{[key: string]: any}} />`
 
