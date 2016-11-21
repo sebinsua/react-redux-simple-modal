@@ -43,7 +43,13 @@ export default connect(
 
 ## API
 
-### `openModal(modalType: string, modalParams: {[key: string]: any}) => void`
+### Reducer
+
+Your root reducer should use the `reducer` exported by this module against its `modals` key.
+
+### Actions
+
+#### `openModal(modalType: string, modalParams: {[key: string]: any}) => void`
 
 This opens the `SimpleModalComponent` referred to by `modalType`.
 
@@ -51,17 +57,19 @@ This opens the `SimpleModalComponent` referred to by `modalType`.
 
 `modalParams` are a set of props that you wish to be set on the `SimpleModalComponent`.
 
-### `closeModal(...rest: Array<void>) => void`
+#### `closeModal(...rest: Array<void>) => void`
 
 This removes the current modal.
 
 It has no arguments.
 
-### `<ModalSwicher modals={{[key: string]: SimpleModalComponent}} />`
+### Component
+
+#### `<ModalSwicher modals={{[key: string]: SimpleModalComponent}} />`
 
 This renders a `SimpleModalComponent` iff `modalType` has been set within the modals store.
 
-### `<SimpleModalComponent modalType={string} closeModal={(...rest: Array<void>) => void} modalParams={{[key: string]: any}} />`
+###### `<SimpleModalComponent modalType={string} closeModal={(...rest: Array<void>) => void} modalParams={{[key: string]: any}} />`
 
 `SimpleModalComponent` describes the contract that your modals should follow.
 
