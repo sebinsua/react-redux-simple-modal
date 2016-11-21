@@ -40,3 +40,31 @@ export default connect(
   { openModal }
 )(ExamplePage)
 ```
+
+## API
+
+### `openModal(modalType: string, modalParams: {[key: string]: any}) => void`
+
+This opens the `SimpleModalComponent` referred to by `modalType`.
+
+`modalType` is a constant that references a component passed into `ModalSwitcher`'s `modals` prop.
+
+`modalParams` are a set of props that you wish to be set on the `SimpleModalComponent`.
+
+### `closeModal(...rest: Array<void>) => void`
+
+This removes the current modal.
+
+It has no arguments.
+
+### `<ModalSwicher modals={{[key: string]: SimpleModalComponent}} />`
+
+This renders a `SimpleModalComponent` iff `modalType` has been set within the modals store.
+
+### `<SimpleModalComponent modalType={string} closeModal={(...rest: Array<void>) => void} modalParams={{[key: string]: any}} />`
+
+`SimpleModalComponent` describes the contract that your modals should follow.
+
+They should use the `closeModal` prop that was passed in to close themselves.
+
+They will receive the extra props passed in as second argument of `showModal(..., modalParams)` as a `modalParams` prop.
