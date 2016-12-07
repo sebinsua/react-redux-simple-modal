@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.2.3"></a>
+## [0.2.3](https://github.com/sebinsua/react-redux-simple-modal/compare/v0.2.2...v0.2.3) (2016-12-07)
+
+
+### Bug Fixes
+
+* **flow:** improve flow actions ([d99242e](https://github.com/sebinsua/react-redux-simple-modal/commit/d99242e))
+
+
+
 <a name="0.2.2"></a>
 ## [0.2.2](https://github.com/sebinsua/react-redux-simple-modal/compare/v0.2.1...v0.2.2) (2016-12-07)
 
