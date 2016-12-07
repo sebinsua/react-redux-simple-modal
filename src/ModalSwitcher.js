@@ -1,19 +1,25 @@
-import React, { Component, PropTypes } from 'react'
+/* @flow */
+import { createElement, Component } from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 
 import { destroy, closeModal } from './actions'
-import { REDUCER_NAME } from './reducer'
+
+import { NAME } from './reducer'
+
+import type { KeyValueObject, React$Component, Dispatch, ActionCreator, FSA } from './typings'
+
+type ModalSwitcherProps = {
+  modals: { [key: string]: React$Component<*, *, *> },
+  modalType: string,
+  modalParams: KeyValueObject,
+  closeModal: ActionCreator<FSA, void>,
+  destroy: ActionCreator<FSA, void>
+}
 
 export class ModalSwitcher extends Component {
 
-  static propTypes = {
-    modals: PropTypes.object.isRequired,
-    modalType: PropTypes.string,
-    modalParams: PropTypes.object,
-    closeModal: PropTypes.func.isRequired,
-    destroy: PropTypes.func.isRequired
-  }
+  props: ModalSwitcherProps
 
   componentWillUnmount () {
     const { destroy } = this.props
@@ -30,23 +36,12 @@ export class ModalSwitcher extends Component {
     } = this.props
 
     const ModalToDisplay = modals[modalType]
-    if (ModalToDisplay) {
-      return (
-        <ModalToDisplay
-          modalType={modalType}
-          modalParams={modalParams}
-          closeModal={closeModal}
-          {...remainingProps}
-        />
-      )
-    }
-
-    return null
+    return ModalToDisplay ? createElement(ModalToDisplay, { modalType, modalParams, closeModal, ...remainingProps }) : null
   }
 
 }
 
-export function mapStateToProps (state, { reducerKey = REDUCER_NAME } = {}) {
+export function mapStateToProps (state: KeyValueObject, { reducerKey = NAME }: KeyValueObject = {}) {
   if (!(reducerKey in state)) {
     throw new Error(`${reducerKey} was not found in state but is required by ModalSwitcher. Please check your root reducer to ensure it has been setup correctly.`)
   }
@@ -62,7 +57,7 @@ export function mapStateToProps (state, { reducerKey = REDUCER_NAME } = {}) {
   }
 }
 
-export function mapDispatchToProps (dispatch) {
+export function mapDispatchToProps (dispatch: Dispatch<FSA>) {
   return bindActionCreators({ closeModal, destroy }, dispatch)
 }
 

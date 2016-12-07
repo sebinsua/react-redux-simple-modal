@@ -1,9 +1,11 @@
+/* @flow */
 import * as actionTypes from './actionTypes'
 import { openModal, closeModal } from './actions'
-import reducer from './reducer'
+import reducer, { NAME } from './reducer'
 import ModalSwitcher from './ModalSwitcher'
 
 export {
+  NAME,
   actionTypes,
   openModal,
   closeModal,
