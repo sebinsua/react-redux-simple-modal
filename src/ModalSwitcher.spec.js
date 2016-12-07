@@ -17,8 +17,8 @@ const props = {
     'TEST_MODAL_1': TestModal1,
     'TEST_MODAL_2': TestModal2
   },
-  closeModal: () => ({ type: 'type' }),
-  destroy: () => ({ type: 'type' })
+  closeModal: () => ({ type: '@simple-modal/CLOSE' }),
+  destroy: () => ({ type: '@simple-modal/DESTROY' })
 }
 
 test('mapStateToProps() generates valid props', () => {

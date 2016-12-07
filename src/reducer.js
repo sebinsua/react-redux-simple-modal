@@ -11,8 +11,8 @@ export const initialState = {
 }
 
 // Reducer
-export default function modals (state: ModalsReducerState = initialState, action: ModalActions): ModalsReducerState {
-  const { type, payload = {} } = action
+export default function modals (state: ModalsReducerState = initialState, action: ?ModalActions): ModalsReducerState {
+  const { type, payload = {} } = action || {}
   switch (type) {
     case OPEN_MODAL:
       return {

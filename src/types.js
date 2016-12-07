@@ -19,7 +19,7 @@ type ModalsReducerState = {
 
 // Actions
 type FluxStandardAction<T, P> = {
-  type: string,
+  type: T,
   error?: boolean,
   payload?: P
 }
