@@ -51,7 +51,7 @@ Your root reducer should use the `reducer` exported by this module against its `
 
 ### Actions
 
-#### `openModal(modalType: string, modalParams: {[key: string]: any}) => void`
+#### `openModal(modalType, modalParams)`
 
 This opens the `SimpleModalComponent` referred to by `modalType`.
 
@@ -59,7 +59,7 @@ This opens the `SimpleModalComponent` referred to by `modalType`.
 
 `modalParams` are a set of props that you wish to be set on the `SimpleModalComponent`.
 
-#### `closeModal(...rest: Array<void>) => void`
+#### `closeModal()`
 
 This removes the current modal.
 
@@ -67,11 +67,11 @@ It has no arguments.
 
 ### Component
 
-#### `<ModalSwicher modals={{[key: string]: SimpleModalComponent}} />`
+#### `<ModalSwicher modals={modals} />`
 
 This renders a `SimpleModalComponent` iff a `modalType` that matches a key within `modals` has been set within the modals store.
 
-###### `<SimpleModalComponent modalType={string} closeModal={(...rest: Array<void>) => void} modalParams={{[key: string]: any}} />`
+###### `<SimpleModalComponent modalType={modalType} closeModal={closeModal} modalParams={modalParams} />`
 
 `SimpleModalComponent` describes the contract that your modals should follow.
 

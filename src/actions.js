@@ -5,22 +5,21 @@ import {
   DESTROY
 } from './actionTypes'
 
-import type { KeyValueObject } from './typings'
+import type {
+  OpenModalAction,
+  CloseModalAction,
+  DestroyModalsAction,
+  KeyValueObject
+} from './types'
 
-export type FSA = {
-  type: string,
-  error?: boolean,
-  payload?: KeyValueObject
+export function openModal (modalType: string, modalParams: ?KeyValueObject): OpenModalAction {
+  return { type: OPEN_MODAL, payload: { modalType, modalParams: modalParams || {} } }
 }
 
-export function openModal (modalType: string, modalParams: ?KeyValueObject = {}): FSA {
-  return { type: OPEN_MODAL, payload: { modalType, modalParams } }
-}
-
-export function closeModal (...args: Array<void>): FSA {
+export function closeModal (...args: Array<void>): CloseModalAction {
   return { type: CLOSE_MODAL }
 }
 
-export function destroy (...args: Array<void>): FSA {
+export function destroy (...args: Array<void>): DestroyModalsAction {
   return { type: DESTROY }
 }

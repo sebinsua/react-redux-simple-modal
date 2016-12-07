@@ -1,8 +1,9 @@
+/* @flow */
 import { OPEN_MODAL, CLOSE_MODAL, DESTROY } from './actionTypes'
 import reducer, { initialState } from './reducer'
 
 test('reducer sets up initialState', () => {
-  expect(reducer(undefined, {}))
+  expect(reducer(undefined, { type: 'ANY_ACTION' }))
     .toEqual(initialState)
 })
 

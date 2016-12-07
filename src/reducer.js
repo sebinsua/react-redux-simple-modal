@@ -1,13 +1,8 @@
 /* @flow */
 import { OPEN_MODAL, CLOSE_MODAL, DESTROY } from './actionTypes'
-import type { KeyValueObject, FSA } from './typings'
+import type { ModalsReducerState, ModalActions } from './types'
 
 export const NAME = 'modals'
-
-type ModalsReducerState = {
-  modalType: ?string,
-  modalParams: KeyValueObject
-}
 
 // Initial State
 export const initialState = {
@@ -16,7 +11,7 @@ export const initialState = {
 }
 
 // Reducer
-export default function modals (state: ModalsReducerState = initialState, action: FSA): ModalsReducerState {
+export default function modals (state: ModalsReducerState = initialState, action: ModalActions): ModalsReducerState {
   const { type, payload = {} } = action
   switch (type) {
     case OPEN_MODAL:

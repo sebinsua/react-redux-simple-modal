@@ -1,13 +1,14 @@
-import React from 'react'
+/* @flow */
+import React, { Element } from 'react'
 import { shallow } from 'enzyme'
 
 import { mapStateToProps, ModalSwitcher } from './ModalSwitcher'
 
-function TestModal1 () {
+function TestModal1 (): Element<*> {
   return <span>Test Modal 1</span>
 }
 
-function TestModal2 () {
+function TestModal2 (): Element<*> {
   return <span>Test Modal 2</span>
 }
 
@@ -16,10 +17,8 @@ const props = {
     'TEST_MODAL_1': TestModal1,
     'TEST_MODAL_2': TestModal2
   },
-  modalType: null,
-  modalParams: null,
-  closeModal: () => undefined,
-  destroy: () => undefined
+  closeModal: () => ({ type: 'type' }),
+  destroy: () => ({ type: 'type' })
 }
 
 test('mapStateToProps() generates valid props', () => {

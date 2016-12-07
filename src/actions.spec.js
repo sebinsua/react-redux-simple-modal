@@ -1,3 +1,4 @@
+/* @flow */
 import { OPEN_MODAL, CLOSE_MODAL, DESTROY } from './actionTypes'
 import { openModal, closeModal, destroy } from './actions'
 

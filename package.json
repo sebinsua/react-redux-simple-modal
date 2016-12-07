@@ -45,6 +45,9 @@
     "plugins": [
       "flowtype"
     ],
+    "ignore": [
+      "**/types.js"
+    ],
     "globals": [
       "test",
       "expect"
