@@ -67,7 +67,7 @@ It has no arguments.
 
 ### Component
 
-#### `<ModalSwicher modals={modals} />`
+#### `<ModalSwitcher modals={modals} />`
 
 This renders a `SimpleModalComponent` iff a `modalType` that matches a key within `modals` has been set within the modals store.
 
