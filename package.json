@@ -1,6 +1,6 @@
 {
   "name": "react-redux-simple-modal",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "A simple modal for React",
   "main": "dist/index.js",
   "jsnext:main": "dist/index.es",
