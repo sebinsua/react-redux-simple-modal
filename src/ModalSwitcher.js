@@ -29,7 +29,6 @@ type ModalSwitcherProps = {
 }
 
 export class ModalSwitcher extends Component {
-
   props: ModalSwitcherProps
 
   componentWillUnmount () {
@@ -49,7 +48,6 @@ export class ModalSwitcher extends Component {
     const ModalToDisplay = modalType ? modals[modalType] : null
     return ModalToDisplay ? createElement(ModalToDisplay, { modalType, modalParams, closeModal, ...remainingProps }) : null
   }
-
 }
 
 export function mapStateToProps (state: KeyValueObject, { reducerKey = NAME, modals, ...ownProps }: KeyValueObject = {}) {
