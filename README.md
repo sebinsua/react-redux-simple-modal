@@ -12,7 +12,7 @@ npm install --save react-redux-simple-modal
 ## Example
 
 ```js
-import React, { PropTypes } from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
 import { ModalSwitcher, openModal } from 'react-redux-simple-modal'
 
@@ -32,10 +32,6 @@ const ExamplePage = ({ openModal }) => (
     <button onClick={openModal.bind(null, OTHER_EXAMPLE_MODAL)}>Open Other Example Modal</button>
   </div>
 )
-
-ExamplePage.propTypes = {
-  openModal: PropTypes.func.isRequired
-}
 
 export default connect(
   null,
