@@ -46,7 +46,8 @@
       "flowtype"
     ],
     "ignore": [
-      "**/types.js"
+      "**/types.js",
+      "example/**"
     ],
     "globals": [
       "test",
