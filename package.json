@@ -18,7 +18,7 @@
   "scripts": {
     "test": "npm run test:lint && npm run test:unit",
     "test:lint": "flow && standard $npm_package_directories_src | snazzy",
-    "test:unit": "jest $npm_package_directories_test",
+    "test:unit": "jest",
     "build": "rollup -c",
     "push": "git push --follow-tags origin master",
     "release": "npm test && npm run build && standard-version && npm run push && npm publish"

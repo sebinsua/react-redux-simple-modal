@@ -30,7 +30,8 @@ test('mapStateToProps() generates valid props', () => {
       }
     }
   }
-  expect(mapStateToProps(state))
+
+  expect(mapStateToProps(state, {}))
     .toEqual({
       modalType: state.modals.modalType,
       modalParams: state.modals.modalParams
